@@ -19,11 +19,12 @@ public class ListaGeneros {
 
         }
         @Test
-        public void testeGeneros () {
-        ListaGeneros generos = new ListaGeneros();
-        generos.testeGeneros();
+        public void testeGeneros(){
+        List<HomensMulheres> lista = new HomensMulheres(null, null).pessoasGenero();
 
-        Assert.assertEquals("Feminino", generos);
+        List<HomensMulheres> mulheres = lista.stream()
+                .filter(genero -> genero.getSexo().equals("Feminino"))
+                .toList();
 
 
 
